@@ -1,5 +1,3 @@
-#include <opencv2/opencv.hpp>
-#include <raspicam_cv.h>
 #include <iostream>
 #include <ctime>
 #include <wiringPi.h>
@@ -9,8 +7,8 @@
 
 
 using namespace std;
-using namespace cv;
-using namespace raspicam;
+
+
 
 
  
@@ -30,21 +28,16 @@ int main()
     }
     printf("serial test start ...\n");
     
-    int x=2,y=1;
+   
     int i=0;
     while(1)
     {  
         cout<<"sending...try-"<<i<<endl;
-            if(x>y)
-            serialPutchar(fd,'9');
-            else if(x<y)
-            serialPuts(fd,"1");
-            else if(x==y)
-            serialPuts(fd,"2");
             
-           // serialPutchar(fd,'A');
-           //  serialPuts(fd1,"A");
-            //cout<<"data recieved = "<<serialGetchar(fd)<<endl;
+            serialPutchar(fd,'9');
+           
+           
+          
         delay(300);
         i++;
     }  
